@@ -1,0 +1,2 @@
+export const PART_TYPE_TEXT = 'PART_TYPE_TEXT';
+export const PART_TYPE_INDEX = 'PART_TYPE_INDEX';

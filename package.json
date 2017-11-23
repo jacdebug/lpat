@@ -1,0 +1,40 @@
+{
+  "name": "lpat",
+  "version": "0.0.1",
+  "description": "Find pattern from list of string",
+  "main": "dist/lpat.cjs.js",
+  "module": "dist/lpat.esm.js",
+  "browser": "dist/lpat.umd.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacdebug/lpat.git"
+  },
+  "keywords": [
+    "pattern",
+    "match",
+    "string",
+    "matched",
+    "indexfinder"
+  ],
+  "author": "jacdebug",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacdebug/lpat/issues"
+  },
+  "homepage": "https://github.com/jacdebug/lpat#readme"
+}
