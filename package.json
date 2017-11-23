@@ -1,6 +1,6 @@
 {
   "name": "lpat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Find pattern from list of string",
   "main": "dist/lpat.cjs.js",
   "module": "dist/lpat.esm.js",
