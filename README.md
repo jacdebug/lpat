@@ -14,7 +14,7 @@ $ npm install --save lpat
 ## Usage
 
 ```js
-const lpad = require('lpat');
+const lpat = require('lpat');
 
 const pattern = lpat(['IMG_0001.JPG', 'IMG_0002.JPG', 'IMG_0003.JPG']); 
 // "IMG_000[1..3].JPG"
