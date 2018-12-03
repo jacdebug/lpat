@@ -1,37 +1,13 @@
-import { 
+import {
   PART_TYPE_TEXT, 
   PART_TYPE_INDEX 
 }  from './constants';
 import searchBack from './searchBack';
-
-// find seq info
-const sqDiff = (a, b) => {
-  let currentMatch = '';
-  const seqInfo = [];
-  const addSeqInfo = (type, value) => seqInfo.push({ type, value });
-
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] === b[i]) {
-      currentMatch += a[i];
-    } else {
-      if (currentMatch.length) {
-        addSeqInfo(PART_TYPE_TEXT, currentMatch);
-        currentMatch = '';
-      }
-      addSeqInfo(PART_TYPE_INDEX, a[i]);
-    }
-  }
-
-  currentMatch.length &&
-    addSeqInfo(PART_TYPE_TEXT, currentMatch);
-
-  return seqInfo;
-}
-
+import stringDiff from './stringDiff';
 
 // guess 1 - increment index
 const nextGuessFinderA = (seqParts, indexToFind) =>
-  seqParts.reduce((result, seqPart, index, seqParts) =>
+  seqParts.reduce((result, seqPart, index) =>
     result += seqPart.type === PART_TYPE_INDEX ?
       parseInt(seqPart.value, 10) + indexToFind : seqPart.value
     , '');
@@ -103,7 +79,7 @@ const testForSeq = (seq, seqInfo) => {
 
 const lpat = seq => {
   let results = [];
-  let sqInfo = sqDiff(seq[0], seq[1]);
+  let sqInfo = stringDiff(seq[0], seq[1]);
   let i = testForSeq(seq, sqInfo);
   let result = sqInfo.map(ele => {
     if (ele.type === PART_TYPE_INDEX) {

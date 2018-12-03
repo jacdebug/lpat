@@ -93,14 +93,24 @@ let testSeq1 = [
     },
 
     {
+        seq: [
+            'SCENE_0001_FRAME_001.JPG', 'SCENE_0001_FRAME_002.JPG', 'SCENE_0001_FRAME_003.JPG', 
+            'SCENE_0002_FRAME_001.JPG', 'SCENE_0002_FRAME_002.JPG', 'SCENE_0002_FRAME_003.JPG'
+        ],
+         res: 'SCENE_0001_FRAME_00[1..3].JPG SCENE_0002_FRAME_00[1..3].JPG',
+        //   res: 'SCENE_000[1..2]_FRAME_00[1..3].JPG'
+           // res: 'SCENE_0001_FRAME_[001..3].JPG SCENE_0002_FRAME_00[1..3].JPG'
+    },
+
+    {
         get seq() {
             let bigArray = [];
-            for (let i = 0; i < 1000000; i++) {
+            for (let i = 0; i < 100; i++) {
                 bigArray.push(`random-1${i}`);
             }
             return bigArray;
         },
-        res: 'random-1[0..999999]',
+        res: 'random-1[0..99]',
     },
 
 ];
